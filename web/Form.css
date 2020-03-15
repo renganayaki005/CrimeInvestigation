@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 15, 2020, 12:55:51 AM
+    Author     : RengaNayagi
+*/
+form
+{
+   max-width: 600px;
+}
+input[type=text], input[type=password], input[type=number], textarea{
+  width: 95%;
+  padding: 14px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+}
+select
+{
+ width: 100%;
+  padding: 14px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none; 
+}
+  
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+  position: relative;
+  left: 65%;
+  
+}
+
+.container {
+  padding: 16px;
+  background-color: #DCDCDC;
+  position: relative;
+  transform: translate(65%,0%);
+}
+
+span.psw {
+  float: right;
+  padding-top: auto;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
