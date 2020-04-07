@@ -65,8 +65,8 @@ public final class addOfficer_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <script src=\"validation.js\"></script>\n");
       out.write("        <script>\n");
       out.write("         window.onload = function(){\n");
-      out.write("            document.getElementById(\"officerIdValue\").value = Math.floor((Math.random() * 10000) + 100);\n");
-      out.write("        };   \n");
+      out.write("            document.getElementById(\"officerIdValue\").value = \"OFR\"+Math.floor((Math.random() * 10000) + 100);\n");
+      out.write("        };  \n");
       out.write("        </script>\n");
       out.write("        <style>\n");
       out.write("    .btn {\n");
@@ -180,13 +180,13 @@ public final class addOfficer_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <button class=\"dropbtn\">Manage Officer\n");
       out.write("    </button>\n");
       out.write("    <div class=\"dropdown-content\">\n");
-      out.write("      <a href=\"#\">Add Officer</a>\n");
-      out.write("      <a href=\"#\">Remove Officer</a>\n");
+      out.write("      <a href=\"addOfficer.jsp\">Add Officer</a>\n");
+      out.write("      <a href=\"removeOfficer.jsp\">Remove Officer</a>\n");
       out.write("    </div>\n");
       out.write("        </div>\n");
       out.write("  <div class=\"signout\"><a href=\"signOut.jsp\">Sign out</a></div>\n");
       out.write("</div> <br/>\n");
-      out.write("<form action=\"#\" method=\"post\" name=\"addOfficer\" onsubmit=\"return validate()\">\n");
+      out.write("<form action=\"addOfficertoDB.jsp\" method=\"post\" name=\"addOfficer\" onsubmit=\"return validate()\">\n");
       out.write("  <div class=\"container\">\n");
       out.write("     <h1>Add Officer!</h1>\n");
       out.write("    <label for=\"officerIdLabel\"><b>officer Id</b></label>\n");
@@ -243,7 +243,7 @@ public final class addOfficer_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("\n");
-      out.write("    <label for=\"deptIdLabel\"><b>Agency Name</b></label>\n");
+      out.write("    <label for=\"deptIdLabel\"><b>Department Name</b></label>\n");
       out.write("    ");
 
    try{
@@ -271,6 +271,12 @@ public final class addOfficer_jsp extends org.apache.jasper.runtime.HttpJspBase
    }       
 
       out.write("\n");
+      out.write("    <label for=\"responsibiltyLabel\"><b>Responsibility</b></label>\n");
+      out.write("    <select name=\"userType\" required>\n");
+      out.write("        <option value=\"\" disabled=disabled selected>select...</option>\n");
+      out.write("        <option value=\"Investigation\">Investigation</option>\n");
+      out.write("        <option value=\"Forensic\">Forensic</option>\n");
+      out.write("    </select>\n");
       out.write("    \n");
       out.write("    <button type=\"submit\" class=\"btn\">Add</button>\n");
       out.write("    <button type=\"reset\" class=\"btn\">Clear</button><br/>\n");

@@ -4,7 +4,6 @@
     Author     : RengaNayagi
 --%>
 
-<%@page import="javax.xml.ws.Response"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,15 +20,16 @@
            String caseDesc=request.getParameter("caseDesc");
            Class.forName("oracle.jdbc.driver.OracleDriver");  
            Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","renga");  
-           PreparedStatement pstmt=con.prepareStatement("insert into case(caseId,caseType,caseDesc) values(?,?,?)");  
+           PreparedStatement pstmt=con.prepareStatement("insert into case(caseId,caseType,caseDesc,status) values(?,?,?,?)");  
            pstmt.setString(1,caseId);
            pstmt.setString(2,caseType);
            pstmt.setString(3,caseDesc);
+           pstmt.setString(4, "Registered");
            pstmt.executeUpdate();
+                
            %><script>alert("<%out.print("Case Added!");%>");</script><%  
            RequestDispatcher rd=request.getRequestDispatcher("addCase.jsp");  
            rd.include(request, response);  
- 
            
          %>
     </body>

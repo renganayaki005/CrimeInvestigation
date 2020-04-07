@@ -85,8 +85,9 @@
     </button>
     <div class="dropdown-content">
       <a href="addCase.jsp">Add Case</a>
-      <a href="#">Track Case</a>
-      <a href="#">Map Case</a>
+      <a href="trackCase.jsp">Track Case</a>
+      <a href="mapCase.jsp">Map Case</a>
+      <a href="viewCaseHistory.jsp">View Case History</a>
     </div>   
   </div> 
   <div class="dropdown">
@@ -94,7 +95,7 @@
     </button>
     <div class="dropdown-content">
       <a href="addOfficer.jsp">Add Officer</a>
-      <a href="#">Remove Officer</a>
+      <a href="removeOfficer.jsp">Remove Officer</a>
     </div>
         </div>
   <div class="signout"><a href="signOut.jsp">Sign out</a></div>

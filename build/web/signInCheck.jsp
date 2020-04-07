@@ -38,7 +38,7 @@
       }
           
        }
-       else if(rs.getString("usertype").equals("InvestigationOfficer")){
+       else if(rs.getString("usertype").equals("Investigation")){
            pstmt=con.prepareCall("select * from Officer where Id= ? ");
            pstmt.setString(1, Id);
            rs=pstmt.executeQuery();
@@ -46,7 +46,7 @@
            if(pwd.equals(rs.getString("password")))
       {
           session.setAttribute( "Id",Id);
-          session.setAttribute("type", "InvestigationOfficer");
+          session.setAttribute("type", "Investigation");
           response.sendRedirect("InvestigationOfficerHome.jsp");
         }
       else{
@@ -55,7 +55,7 @@
        }
            }   
        }
-       else if(rs.getString("usertype").equals("ForensicOfficer")){
+       else if(rs.getString("usertype").equals("Forensic")){
            pstmt=con.prepareCall("select * from Officer where Id= ? ");
            pstmt.setString(1, Id);      
            rs=pstmt.executeQuery();
@@ -64,7 +64,7 @@
            if(pwd.equals(rs.getString("password")))
       {
           session.setAttribute("Id",Id);
-          session.setAttribute("type","ForensicOfficer" );
+          session.setAttribute("type","Forensic" );
           response.sendRedirect("ForensicOfficerHome.jsp");
         }
       else{

@@ -41,11 +41,9 @@
            pstmt.setString(2,userType);
            pstmt.executeUpdate();
            
-           %><script>alert("<%out.print("Officer Added!");%>");</script><%  
+           %><script>alert("<%out.print("Officer Added!\nID:"+officerId+"\nPassword:"+password);%>");</script><%  
            RequestDispatcher rd=request.getRequestDispatcher("addOfficer.jsp");  
-           rd.include(request, response);  
- 
-           
+           rd.include(request, response);     
          %>
     </body>
 </html>
